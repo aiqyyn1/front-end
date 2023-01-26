@@ -1,0 +1,92 @@
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.modal{
+  height: 650px;
+  width: 350px;
+  background-color:firebrick;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  
+  
+  
+}
+.register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+h2{
+  margin-left: 20px;
+}
+.templates{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  /* height: 30vh; */
+}
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 20vh;
+
+
+}
+/* .firstError{
+
+  height: 20px;
+  width: 150px;
+  color: black;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 5px;
+  border-color: black;
+} */
+.firstError {
+
+    background: white;
+    box-shadow: 5px  white;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    color:black;
+    margin-top: 10px;
+   }
+   .firstError::after {
+    content: ''; 
+    position: absolute; 
+    left: 20px; bottom: 36px;
+    border: 10px solid transparent; 
+    border-bottom: 10px solid white;
+
+   }
+button{
+  width: 200px;
+  height: 50px;
+  background-color: blanchedalmond;
+  border: 0;
+  font-size: 20px;
+  font-style:inherit
+}
+input{
+  width: 250px;
+  height: 25px;
+  border-radius: 10px;
+  border-color: white;
+  
+}
+h2{
+  margin-bottom: 28px;
+}
