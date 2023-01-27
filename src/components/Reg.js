@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Box from '@mui/material/Box';
-import '../components/Reg.css'
+import '../stylesheets/Reg.css'
 import PasswordChecklist from "react-password-checklist"
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
 export default function Reg() {
   const [data, setData]=useState({
     name:'',
@@ -34,8 +35,7 @@ const sumbit= (e)=>{
    axios.post(url,{
     name:data.name,
      surname:data.surname,
-
-   email:data.email,
+      email:data.email,
      password:data.password
   })
   .then(res=>{

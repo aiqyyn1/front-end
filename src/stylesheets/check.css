@@ -1,0 +1,21 @@
+.user{
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  color: white;
+}
+.check{
+  display: flex;
+   justify-content: space-around;
+  margin-top: 50px;
+   align-items: center;
+}
+form{
+  height: 680px;
+  width: 350px;
+  background-color:firebrick;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  
+}
