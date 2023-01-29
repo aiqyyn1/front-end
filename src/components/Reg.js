@@ -50,7 +50,10 @@ const sumbit= (e)=>{
   
 
 <div>
-<div>
+<div className='navbar'>
+
+
+</div>
    <div className='main'>
 
     
@@ -82,26 +85,28 @@ const sumbit= (e)=>{
      <input placeholder='Enter Your Password' onChange={(e)=>handle(e)} name='password' type='password'id='password' value={data.password} required='required'></input>
 
 </div> 
-<div>
+<div className='repeat'>
 
 <input placeholder='Repeat Your Password' onChange={handleRepeatPassword} name='repPassword' type='password' required='required'></input>
 
 <PasswordChecklist
-    rules={["match"]}
+
     minLength={5}
     value={data.password}
     valueAgain={repeatPassword}
     onChange={(isValid) => {}}
+    rules={["match"]}
    />
 </div> 
-     </div>
-     <div className='button'>
+<div className='button'>
      <button name='regIn' >REG IN</button>
      </div>
+     </div>
+    
      </form>
    </div>
 
-</div>
+
 </div>
 
  

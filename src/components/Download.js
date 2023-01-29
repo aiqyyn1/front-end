@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react'
 import '../stylesheets/check.css'
 import axios from 'axios';
-function Check() {
+
+function Download() {
   const [data, setData]=useState({})
   const [file, setFile]=useState(null);
   const url="http://localhost:3000/Check"
@@ -49,4 +50,4 @@ const handleFileUpload = (event)=>{
   )
 }
 
-export default Check;
+export default Download;

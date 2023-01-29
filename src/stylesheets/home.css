@@ -1,0 +1,44 @@
+body{
+  @apply bg-slate-100
+  font-serif
+}
+.nav{
+  @apply h-20
+ bg-slate-200
+ fixed
+top-0
+right-0
+left-0
+flex
+justify-between
+items-center
+p-2
+}
+.sidebar{
+  @apply
+  absolute
+  bg-slate-200
+top-0
+right-0
+h-screen
+w-64
+}
+.sidebar li{
+ @apply
+ list-none
+ pt-4
+ pr-8
+}
+.sidebar li:hover{
+  @apply
+  bg-slate-50
+}
+.img{
+  @apply
+  w-36
+
+}
+.img2{
+  @apply
+  w-20
+}

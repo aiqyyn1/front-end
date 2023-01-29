@@ -1,92 +1,62 @@
 
+
 .main{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
+
+  @apply flex
+  justify-center
+   items-center
+  flex-col
+  text-center
+  h-screen
+  } 
+
+body{
+  
+  @apply bg-orange-300
+
 }
 
+
 .modal{
-  height: 680px;
-  width: 350px;
-  background-color:firebrick;
-  border-radius: 20px;
-  color: white;
-  font-size: 15px;
-  
-  
+ @apply bg-slate-50
+ text-neutral-900
+text-xl
+flex
+justify-center
+flex-col
+
+
   
 }
 .register{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  
+  @apply flex justify-center items-center flex-col
 }
 h2{
-  margin-left: 20px;
+  @apply m-7
+ 
 }
 .templates{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 50px;
-  /* height: 30vh; */
+
+  @apply flex justify-center items-center flex-col gap-10
 }
+ 
+
+
+
 .button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 20vh;
+@apply flex justify-center items-center  bg-orange-300
+h-16
+w-48
 
 
-}
-/* .firstError{
 
-  height: 20px;
-  width: 150px;
-  color: black;
-  margin-top: 10px;
-  background-color: white;
-  border-radius: 5px;
-  border-color: black;
-} */
-.firstError {
+} 
 
-    background: white;
-    box-shadow: 5px  white;
-    border-radius: 10px;
-    padding: 10px;
-    position: absolute;
-    color:black;
-    margin-top: 10px;
-   }
-   .firstError::after {
-    content: ''; 
-    position: absolute; 
-    left: 20px; bottom: 36px;
-    border: 10px solid transparent; 
-    border-bottom: 10px solid white;
-
-   }
-button{
-  width: 200px;
-  height: 50px;
-  background-color: blanchedalmond;
-  border: 0;
-  font-size: 20px;
-  font-style:inherit
-}
 input{
   width: 250px;
   height: 25px;
   border-radius: 10px;
   border-color: white;
   
-}
-h2{
-  margin-bottom: 28px;
 }
