@@ -1,0 +1,41 @@
+body{
+  background-image: linear-gradient(120deg, #155799, #159957)  !important;
+}
+.navbar{
+  @apply
+  flex
+  justify-center
+  items-center
+
+}
+.nav{
+  @apply 
+ bg-slate-200
+ z-20
+ w-full
+h-[70px]
+
+
+
+
+rounded-lg
+flex
+justify-between
+items-center
+p-2
+}
+
+.img{
+  @apply
+ 
+
+ 
+ text-gray-100
+
+}
+.img{
+  @apply w-20
+}
+.cont{
+  @apply flex flex-row gap-16 font-serif 
+}

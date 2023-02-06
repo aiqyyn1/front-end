@@ -1,0 +1,102 @@
+
+
+.main{
+
+  @apply flex
+  justify-center
+   items-center
+  flex-col
+  text-center
+  h-screen
+
+  } 
+ 
+  
+.modal{
+ @apply bg-lime-100
+ text-neutral-900
+text-xl
+flex
+justify-between
+flex-col
+w-[350px]
+h-[680px]
+rounded-[20px]
+
+
+  
+}
+.cont{
+  @apply flex flex-row gap-16 font-serif 
+}
+
+.register{
+  
+  @apply flex justify-center items-center flex-col
+}
+h2{
+  @apply m-7
+ 
+}
+.templates{
+
+  @apply flex justify-center items-center flex-col gap-10
+}
+ 
+
+
+
+.button{
+@apply flex justify-center items-center  bg-lime-400
+h-16
+w-48
+mb-5
+
+
+
+} 
+
+input{
+ @apply
+ w-60
+ rounded-lg
+ border-cyan-100
+  
+}
+
+.navbar{
+  @apply
+  flex
+  justify-center
+  items-center
+}
+.nav{
+  @apply h-20
+ bg-slate-200
+ z-20
+
+
+
+w-full
+
+rounded-lg
+flex
+justify-between
+items-center
+p-2
+}
+
+.img{
+  @apply
+ 
+
+ 
+ text-gray-100
+
+}
+.img{
+  @apply w-20
+}
+.cont{
+  @apply flex flex-row gap-16 font-serif 
+}

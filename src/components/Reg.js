@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import Box from '@mui/material/Box';
-import '../stylesheets/Reg.css'
+import { Link } from 'react-router-dom';
+import logo from '../photos/photo.png'
 import PasswordChecklist from "react-password-checklist"
 import { useNavigate } from 'react-router-dom';
+import styles from '../stylesheets/Reg.module.css'
 import axios from 'axios';
-
 export default function Reg() {
   const [data, setData]=useState({
     name:'',
@@ -12,7 +13,8 @@ export default function Reg() {
     email : '',
     password: ''
   })
-  
+  console.log(styles)
+
   const [repeatPassword, setRepeatPassword]=useState('');
 
 const handleRepeatPassword=(e)=>{
@@ -41,7 +43,7 @@ const sumbit= (e)=>{
   .then(res=>{
     console.log(res.data)
    })
-   navigate("/Check")
+   navigate("/Download")
  }
 }
 
@@ -50,22 +52,30 @@ const sumbit= (e)=>{
   
 
 <div>
-<div className='navbar'>
+<div className={styles.navbar}>
+        <div className={styles.nav}>
+          <img src={logo} className={styles.img}></img>
+          <div className={styles.cont}>
+            <Link className='hover:underline' to='/Home' >HOME</Link>
+           <Link to='/Reg'>REG IN</Link>
+            <Link className='hover:underline' to='/Log'>LOG IN</Link>
+          </div>
+        </div>
+      </div>
+    
 
-
-</div>
-   <div className='main'>
+   <div className={styles.main}>
 
     
 
-     <form className='modal'   onSubmit={(e)=>sumbit(e)}>
-      <div className='register'>
+     <form className={styles.modal}   onSubmit={(e)=>sumbit(e)}>
+      <div className={styles.register}>
      <h1>Dima & Aiqyn</h1>
-
+     
      <h2>Videos, workbooks and more.
      You’re here, let’s do this.</h2>
      </div>
-     <div className='templates'>
+     <div className={styles.templates}>
 <div>
   
       <input placeholder='Enter Your Name' type='text' onChange={(e)=>handle(e)}  name='name' id='name' value={data.name.toString()} required='required' ></input>
@@ -98,14 +108,13 @@ const sumbit= (e)=>{
     rules={["match"]}
    />
 </div> 
-<div className='button'>
+<div className={styles.button}>
      <button name='regIn' >REG IN</button>
      </div>
      </div>
     
      </form>
    </div>
-
 
 </div>
 

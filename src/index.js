@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.css'
 import Main from './Main';
+import Home from './components/Home';
+import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Main></Main>
+<BrowserRouter> 
+ <Main/>
+</BrowserRouter>
+  
   </React.StrictMode>
 );
 
