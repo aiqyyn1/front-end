@@ -10,7 +10,7 @@ body{
 }
 .nav{
   @apply 
- bg-slate-200
+  bg-lime-100
  z-20
  w-full
 h-[70px]

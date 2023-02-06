@@ -1,0 +1,74 @@
+.welcome_download{
+  @apply flex items-center
+  justify-center
+  mt-11
+}
+.user{
+  @apply font-serif
+  text-lg
+  text-neutral-100
+}
+.navbar_download{
+  @apply
+  flex
+  justify-center
+  items-center
+}
+.nav_download{
+  @apply h-20
+  bg-lime-100
+ z-20
+
+
+
+w-full
+
+rounded-lg
+flex
+justify-between
+items-center
+p-2
+}
+
+.img_download{
+  @apply
+ 
+
+ 
+ text-gray-100
+
+}
+.img_download{
+  @apply w-20
+}
+.cont_download{
+  @apply flex flex-row gap-16 font-serif 
+}
+
+.form_download{
+  @apply 
+  
+
+ bg-lime-100
+  text-neutral-900
+
+
+flex
+flex-col
+justify-between
+items-center
+font-serif
+text-lg
+ w-[400px]
+ h-[550px]
+ 
+ rounded-[20px]
+ 
+}
+.templates_download{
+  @apply flex justify-center items-center flex-col gap-10
+}
+.main_download{
+  @apply flex justify-center items-center
+  h-screen
+}

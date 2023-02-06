@@ -93,7 +93,7 @@ You’re here, let’s do this.</h2>
 
 <div className='flex justify-center'>
 <div className={styles.button}>
-     <button name='regIn' >LOG IN</button>
+     <button name='regIn'  >LOG IN</button>
      </div>
 
      </div>
