@@ -32,7 +32,7 @@ const sumbit= (e)=>{
 
   e.preventDefault();
   const emailChecker=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if (data.password===repeatPassword && emailChecker.test(data.email) && data.name.length>0 && data.surname.length>0 ){
+  if (data.password===repeatPassword && emailChecker.test(data.email) && data.name.length>0 && data.surname.length>0  ){
 
    axios.post(url,{
     name:data.name,
@@ -41,7 +41,7 @@ const sumbit= (e)=>{
      password:data.password
   })
   .then(res=>{
-    console.log(res.data)
+    // console.log(res.data)
    })
    navigate("/Download")
  }
