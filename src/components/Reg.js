@@ -13,14 +13,14 @@ export default function Reg() {
     email : '',
     password: ''
   })
-  console.log(styles)
+  
 
   const [repeatPassword, setRepeatPassword]=useState('');
 
 const handleRepeatPassword=(e)=>{
   setRepeatPassword(e.target.value);
 }
-const url="http://localhost:3000/registration"
+const url="http://localhost:8080/registration"
 const  handle= (e) => {
     const newdata={...data}
     newdata[e.target.id]=e.target.value

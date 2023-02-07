@@ -4,19 +4,21 @@ import '../stylesheets/check.css'
 import axios from 'axios';
 import logo from '../photos/photo.png'
 import { Link } from 'react-router-dom';
+
 function Download() {
   const [data, setData]=useState({})
   const [video, setVideo]=useState(null);
   const [title, setTitle]=useState(null);
   const [image, setImage]=useState(null)
   const [description, setDescription]=useState(null);
-  const url="http://localhost:3000/Check"
-  const url2="http://localhost:3000/upload"
+
+  const url2="http://localhost:8080/upload"
 useEffect(()=>{
-  axios.get(url).then(res=>{
+  axios.get(url2).then(res=>{
     setData(res.data)
   })
 },[])
+console.log(data)
 const handleVideoUpload = (event)=>{
   setVideo(event.target.files[0].name);
   
