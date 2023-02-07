@@ -41,7 +41,7 @@ const sumbit= (e)=>{
      password:data.password
   })
   .then(res=>{
-    // console.log(res.data)
+    console.log(res.data)
    })
    navigate("/Download")
  }
