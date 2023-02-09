@@ -7,45 +7,41 @@ import { Link } from 'react-router-dom';
 
 function Download() {
   const [data, setData]=useState({})
-  const [video, setVideo]=useState(null);
-  const [title, setTitle]=useState(null);
-  const [image, setImage]=useState(null)
-  const [description, setDescription]=useState(null);
-
   const url2="http://localhost:8080/upload"
-useEffect(()=>{
-  axios.get(url2).then(res=>{
-    setData(res.data)
-  })
-},[])
-console.log(data)
-const handleVideoUpload = (event)=>{
-  setVideo(event.target.files[0].name);
-  
-   }
-   const handleImageUpload=(e)=>{
-    setImage(e.target.files[0].name);
-   }
+  const [video, setVideo] = useState(null);
+  const [image, setImage] = useState(null);
+  const [title, setTitle]=useState('');
+  const [description, setDescription]=useState('');
+  const handleVideoChange = (e) => {
+    setVideo(e.target.files[0]);
+  };
 
-   const handleSubmit = async(event) => {
-    event.preventDefault()
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     const formData = new FormData();
-    const formData1 = new FormData();
-    formData1.append("selectedFile", image);
-    formData.append("selectedFile", video);
+    formData.append("video", video);
+    formData.append("image", image);
+    formData.append("title", title);
+    formData.append("description", description);
     try {
-      const response = await axios({
-        method: "post",
-        url: url2,
-        data: formData , title, description,  formData1,
-        headers: { "Content-Type": "multipart/form-data" },
+      const response = await axios.post(url2, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
-    } catch(error) {
-      console.log(error)
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
     }
-  }
+  };
 
- 
+
+
 
 
   return(
@@ -65,7 +61,7 @@ const handleVideoUpload = (event)=>{
         <div className='user'>Welcome !: {data.name} {data.surname} </div>
         </div>
         <div className='main_download'>
-         <form onSubmit={(e)=>handleSubmit(e)} className='form_download'>
+         <form onSubmit={handleSubmit}  className='form_download'>
         
          
       
@@ -79,11 +75,11 @@ const handleVideoUpload = (event)=>{
        
           <div className='flex gap-5'>
             <label>Download video</label>
-          <input type='file' accept='.mp4' onChange={handleVideoUpload} required/>
+          <input type='file' accept='.mp4' onChange={handleVideoChange} required/>
           </div>
           <div className='flex gap-5'>
             <label>Downlod photo</label>
-          <input type='file' accept="image/*" onChange={handleImageUpload} required />
+          <input type='file' accept="image/*" onChange={handleImageChange} required />
           </div>
           <div className='flex gap-5'>
             <label>Write  title</label>
@@ -106,3 +102,4 @@ w-48 mb-5'>submit</button>
 }
 
 export default Download;
+

@@ -25,7 +25,7 @@ const  handle= (e) => {
     const newdata={...data}
     newdata[e.target.id]=e.target.value
     setData(newdata)
-    console.log(data)
+  
 }
 let navigate=useNavigate();
 const sumbit= (e)=>{
@@ -41,7 +41,7 @@ const sumbit= (e)=>{
      password:data.password
   })
   .then(res=>{
-    console.log(res.data)
+    // console.log(res.data)
    })
    navigate("/Download")
  }
