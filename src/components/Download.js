@@ -7,34 +7,45 @@ import { Link } from 'react-router-dom';
 
 function Download() {
   const [data, setData]=useState({})
-  const url2="http://localhost:8080/upload"
+  const url2="http://localhost:8081/upload"
   const [video, setVideo] = useState(null);
   const [image, setImage] = useState(null);
   const [title, setTitle]=useState('');
   const [description, setDescription]=useState('');
   const handleVideoChange = (e) => {
-    setVideo(e.target.files[0]);
+    setVideo(e.target.files[0].name);
   };
 
   const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
+    setImage(e.target.files[0].name);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const formData = new FormData();
     formData.append("video", video);
-    formData.append("image", image);
+    formData.append("preview_image", image);
     formData.append("title", title);
     formData.append("description", description);
+  
     try {
-      const response = await axios.post(url2, formData, {
+      const response = await fetch(url2, {
+        method: "POST",
+        body: formData,
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "multipart/form-data"
         },
       });
-      console.log(response.data);
+  
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+      else{
+        console.log("VSE ZAEBIS")
+      }
+  
+  
     } catch (error) {
       console.error(error);
     }
