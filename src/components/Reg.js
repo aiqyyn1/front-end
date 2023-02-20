@@ -46,28 +46,29 @@ export default function Reg() {
       //     console.log(res.status);
       //   });
       try {
-        const response = await axios.post(url, {
-         
-        
+        const response = await fetch(url, {
+          method: "POST",
+          body:JSON.stringify({
 
             name:data.name,
             surname:data.surname,
             email:data.email,
             password:data.password,
-          }).then(res=> console.log(res.data))
-        
-  
+          })
+        }).then(async res =>{
+          if (res.ok){
+            navigate("/Download")
+            console.log("YEAAAHHH")
+          }
+        })
+      
+    
       }  
       catch (error) {
         console.error(error);
       }
-        // if (!response.ok) {
-        //   throw new Error("Request failed");
-        // }
-        // else{
-        //   console.log("VSE OK")
-        // }
-      navigate('/Download');
+       
+     
     }
   };
 
