@@ -13,11 +13,11 @@ function Download() {
   const [title, setTitle]=useState('');
   const [description, setDescription]=useState('');
   const handleVideoChange = (e) => {
-    setVideo(e.target.files[0].name);
+    setVideo(e.target.files[0]);
   };
 
   const handleImageChange = (e) => {
-    setImage(e.target.files[0].name);
+    setImage(e.target.files[0]);
   };
 
   const handleSubmit = async (e) => {
@@ -33,16 +33,14 @@ function Download() {
       const response = await fetch(url2, {
         method: "POST",
         body: formData,
-        headers: {
-          "Content-Type": "multipart/form-data"
-        },
+      
       });
-  
+      console.log(response);
       if (!response.ok) {
         throw new Error("Request failed");
       }
       else{
-        console.log("VSE ZAEBIS")
+        console.log("VSE OK")
       }
   
   

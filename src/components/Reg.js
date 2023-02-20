@@ -25,8 +25,9 @@ export default function Reg() {
     newdata[e.target.id] = e.target.value;
     setData(newdata);
   };
+
   let navigate = useNavigate();
-  const sumbit = (e) => {
+  const sumbit = async(e) => {
     e.preventDefault();
     const emailChecker = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (
@@ -35,16 +36,37 @@ export default function Reg() {
       data.name.length > 0 &&
       data.surname.length > 0
     ) {
-      axios
-        .post(url, {
-          name: data.name,
-          surname: data.surname,
-          email: data.email,
-          password: data.password,
-        })
-        .then((res) => {
-          console.log(res.data);
-        });
+      // axios.post(url, {
+      //     name: data.name,
+      //     surname: data.surname,
+      //     email: data.email,
+      //     password: data.password,
+      //   })
+      //   .then((res) => {
+      //     console.log(res.status);
+      //   });
+      try {
+        const response = await axios.post(url, {
+         
+        
+
+            name:data.name,
+            surname:data.surname,
+            email:data.email,
+            password:data.password,
+          }).then(res=> console.log(res.data))
+        
+  
+      }  
+      catch (error) {
+        console.error(error);
+      }
+        // if (!response.ok) {
+        //   throw new Error("Request failed");
+        // }
+        // else{
+        //   console.log("VSE OK")
+        // }
       navigate('/Download');
     }
   };
