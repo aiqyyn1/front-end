@@ -6,6 +6,7 @@ import PasswordChecklist from 'react-password-checklist';
 import { useNavigate } from 'react-router-dom';
 import styles from '../stylesheets/Reg.module.css';
 import axios from 'axios';
+const url = 'http://localhost:8081/registration';
 export default function Reg() {
   const [data, setData] = useState({
     name: '',
@@ -19,7 +20,7 @@ export default function Reg() {
   const handleRepeatPassword = (e) => {
     setRepeatPassword(e.target.value);
   };
-  const url = 'http://localhost:8081/registration';
+
   const handle = (e) => {
     const newdata = { ...data };
     newdata[e.target.id] = e.target.value;

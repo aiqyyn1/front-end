@@ -4,8 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import logo from '../photos/photo.png'
 import styles from '../stylesheets/home.module.css'
+import axios from 'axios';
+import {Player, PosterImage} from 'video-react'
+const url='http://localhost:8081/../storage/previews/a.JPG'
 export default function Home() {
+const [data, setData]=useState([]);
+  useEffect(()=>{
+axios.get((url)).then((res)=>{
+  setData(res.data);
+})
+},[])
 
+ console.log(data);
   return (
     <div>
       <div className={styles.navbar}>
@@ -18,6 +28,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+<img src={data}></img>
+     
     </div>
   );
 }
