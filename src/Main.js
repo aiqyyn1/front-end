@@ -9,6 +9,7 @@ import { Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './stylesheets/home.module.css'
 import LogIn from './components/LogIn';
+import { Video } from './components/Video';
 
 function Main() {
     return (
@@ -22,7 +23,7 @@ function Main() {
                 <Route path='/Home' element={<Home></Home>}></Route>
                 <Route path='/Log' element={<LogIn></LogIn>}></Route>
                 <Route index element={<Home></Home>}></Route>
-
+                 <Route path='/Video' element={<Video></Video>}></Route>
             </Routes>
 
             </>
