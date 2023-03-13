@@ -17,9 +17,7 @@ export default function LogIn() {
 
   const [repeatPassword, setRepeatPassword]=useState('');
 
-const handleRepeatPassword=(e)=>{
-  setRepeatPassword(e.target.value);
-}
+
 const url="http://localhost:3000/registration"
 const  handle= (e) => {
     const newdata={...data}
